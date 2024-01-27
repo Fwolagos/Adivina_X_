@@ -78,6 +78,7 @@
             this.button8.TabIndex = 9;
             this.button8.Text = "Lista de intentos";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -236,6 +237,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Usuarios";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

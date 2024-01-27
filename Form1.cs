@@ -21,5 +21,49 @@ namespace Adivina_X_
         {
 
         }
+
+        /// <summary>
+        /// Boton que Cabia de formulario al formulario de lista de intentos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (Program.stateGame == "stoppped")
+            {
+                MessageBox.Show("Aun el juego no inicia. Por favor precione el boto iniciar.");
+            }
+            else
+            {
+                //Ocultar form
+                this.Hide();
+                //Abrir el otro form
+                ListaIntentos form2 = new ListaIntentos();
+                form2.Show();
+            }
+            
+        }
+
+        /// <summary>
+        /// Boto que cambia del formulario principal hacia el formulario de usuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Program.stateGame == "stoppped")
+            {
+                MessageBox.Show("Aun el juego no inicia. Por favor precione el boto iniciar.");
+            }
+            else
+            {
+                //oculta el formulario actual 
+                this.Hide();
+                //Muestra el nuevo formulario
+                Usuarios form3 = new Usuarios();
+                form3.Show();
+            }
+            
+        }
     }
 }
