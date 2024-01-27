@@ -94,5 +94,15 @@ namespace Adivina_X_
                 Program.player.RessetScore();
             }
         }
+
+        /// <summary>
+        /// Botón que reinicia todo el juego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
