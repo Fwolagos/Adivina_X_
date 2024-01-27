@@ -6,6 +6,10 @@ using System.Windows.Forms;
 
 //Tuve que importar esta bibloteca para poder usar path entre otras cosas 
 using System.IO;
+using Newtonsoft.Json;
+using System.Windows;
+using Adivina_X_;
+
 
 
 
