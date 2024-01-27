@@ -41,7 +41,7 @@ namespace Adivina_X_
                 ListaIntentos form2 = new ListaIntentos();
                 form2.Show();
             }
-            
+
         }
 
         /// <summary>
@@ -51,19 +51,11 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Program.stateGame == "stoppped")
-            {
-                MessageBox.Show("Aun el juego no inicia. Por favor precione el boto iniciar.");
-            }
-            else
-            {
-                //oculta el formulario actual 
-                this.Hide();
-                //Muestra el nuevo formulario
-                Usuarios usuariosForm = new Usuarios();
-                usuariosForm.Show();
-            }
-            
+            //oculta el formulario actual 
+            this.Hide();
+            //Muestra el nuevo formulario
+            Usuarios usuariosForm = new Usuarios();
+            usuariosForm.Show();
         }
 
         /// <summary>
@@ -85,7 +77,7 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
-            if ( Program.stateGame == "stoppped")
+            if (Program.stateGame == "stoppped")
             {
                 MessageBox.Show("El juego aun no inicia por favor presione el boto iniciar");
             }
