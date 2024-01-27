@@ -66,11 +66,33 @@ namespace Adivina_X_
             
         }
 
+        /// <summary>
+        /// Función que habla un poco sobre el juego 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Adivina 'x' es un juego de adivinar el numero pensando por nuestro genio de la lamapra." +
                 " Puedes intentar las veces que quieras pero por cada ves que falles puedes perder un punto o por cada ves que " +
                 "ganes obtendras un punto. ");
+        }
+
+        /// <summary>
+        /// Boton Reiniciar puntaje, Inicia en cero el puntaje del usuario seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if ( Program.stateGame == "stoppped")
+            {
+                MessageBox.Show("El juego aun no inicia por favor presione el boto iniciar");
+            }
+            else
+            {
+                Program.player.RessetScore();
+            }
         }
     }
 }

@@ -38,6 +38,11 @@ namespace Adivina_X_
         /// Estado del juego (stopped,start,)
         /// </summary>
         public static string stateGame = "stoppped";
+
+        /// <summary>
+        /// Es la instancia para almacenar el jugador que fue seleccionado
+        /// </summary>
+        public static UserClass player = null;
         #endregion
 
         /// <summary>
