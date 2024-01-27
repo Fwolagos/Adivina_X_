@@ -32,7 +32,7 @@ namespace Adivina_X_
         /// <summary>
         /// Lista con los  usuarios en la ram
         /// </summary>
-        public static List<Clsusuarios> usersList = new List<Clsusuarios>();
+        public static List<ClaseUsuarios> usersList = new List<ClaseUsuarios>();
 
         /// <summary>
         /// Estado del juego (stopped,start,)
@@ -68,18 +68,22 @@ namespace Adivina_X_
             return numRandom;
         }
 
-        public static List<Clsusuarios> ImportUsers()
+        /// <summary>
+        /// Lee y carga los usuarios guardados en un documento .json
+        /// </summary>
+        /// <returns>Retorna una lista con los usuarios econtrados en el usuarios.json</returns>
+        public static List<ClaseUsuarios> ImportUsers()
         {
             //Ruta del archivo 
             string path = @"C:/Programacion/Dates/Usuarios.json";
             //Lista temporal para cargar usuarios
-            List<Clsusuarios> temp = new List<Clsusuarios>();
+            List<ClaseUsuarios> temp = new List<ClaseUsuarios>();
             if (File.Exists(path))
             {
                 using (StreamReader sr = File.OpenText(path))
                 {
                     string json = sr.ReadToEnd();
-                    temp = JsonConvert.DeserializeObject<List<Clsusuarios>>(json);
+                    temp = JsonConvert.DeserializeObject<List<ClaseUsuarios>>(json);
                 }
             }
             else

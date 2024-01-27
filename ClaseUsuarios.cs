@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adivina_X_
 {
-    public class Clsusuarios
+    public class ClaseUsuarios
     {
         #region Atributos
         public  string Name { get; set; }
@@ -20,7 +20,7 @@ namespace Adivina_X_
         /// </summary>
         /// <param name="getName">Nombre del usuario</param>
         /// <param name="getScore">Recort del usuario</param>
-        public Clsusuarios(string getName, int getScore)
+        public ClaseUsuarios(string getName, int getScore)
         {
             Name = getName;
             Score = getScore;
