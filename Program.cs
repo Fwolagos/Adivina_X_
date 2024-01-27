@@ -9,6 +9,8 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Windows;
 using Adivina_X_;
+using System.Diagnostics.Eventing.Reader;
+using System.Runtime.Remoting.Messaging;
 
 
 
@@ -72,12 +74,23 @@ namespace Adivina_X_
             string path = @"C:/Programacion/Dates/Usuarios.json";
             //Lista temporal para cargar usuarios
             List<Clsusuarios> temp = new List<Clsusuarios>();
-            if (StreamReader sr = File.OpenText(path))
+            if (File.Exists(path))
             {
-
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    string json = sr.ReadToEnd();
+                    temp = JsonConvert.DeserializeObject<List<Clsusuarios>>(json);
+                }
+            }
+            else
+            {
+                MessageBox.Show("El archivo de usuarios no existe.");
             }
 
-            
+            return temp;
+
+
+
         }
 
 
