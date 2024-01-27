@@ -19,7 +19,7 @@ using System.Runtime.Remoting.Messaging;
 
 namespace Adivina_X_
 {
-  
+
     internal static class Program
     {
         #region Variables Globales
@@ -32,7 +32,7 @@ namespace Adivina_X_
         /// <summary>
         /// Lista con los  usuarios en la ram
         /// </summary>
-        public static List<ClaseUsuarios> usersList = new List<ClaseUsuarios>();
+        public static List<UserClass> usersList = new List<UserClass>();
 
         /// <summary>
         /// Estado del juego (stopped,start,)
@@ -57,13 +57,13 @@ namespace Adivina_X_
         /// Esta solo se reinicia si el programa es reiniciado
         /// </summary>
         /// <returns>Retorna el numero Secreto</returns>
-        public static int  SecretNumber()
+        public static int SecretNumber()
         {
             Random rnd = new Random();
             int numRandom = 0;
             do
             {
-                 numRandom = rnd.Next();
+                numRandom = rnd.Next();
             } while (tempList.Contains(numRandom));
             return numRandom;
         }
@@ -72,18 +72,18 @@ namespace Adivina_X_
         /// Lee y carga los usuarios guardados en un documento .json
         /// </summary>
         /// <returns>Retorna una lista con los usuarios econtrados en el usuarios.json</returns>
-        public static List<ClaseUsuarios> ImportUsers()
+        public static List<UserClass> ImportUsers()
         {
             //Ruta del archivo 
             string path = @"C:/Programacion/Dates/Usuarios.json";
             //Lista temporal para cargar usuarios
-            List<ClaseUsuarios> temp = new List<ClaseUsuarios>();
+            List<UserClass> temp = new List<UserClass>();
             if (File.Exists(path))
             {
                 using (StreamReader sr = File.OpenText(path))
                 {
                     string json = sr.ReadToEnd();
-                    temp = JsonConvert.DeserializeObject<List<ClaseUsuarios>>(json);
+                    temp = JsonConvert.DeserializeObject<List<UserClass>>(json);
                 }
             }
             else
@@ -97,8 +97,40 @@ namespace Adivina_X_
 
         }
 
+        /// <summary>
+        /// Exporta los usuarios al .Json
+        /// </summary>
+        /// <param name="temp">Necesita una lista para guardar</param>
+        public static void ExportUsers(List<UserClass> temp)
+        {
+            string json = string.Empty;
 
+            if (temp != null && temp.Count > 0)
+            {
+                json = JsonConvert.SerializeObject(temp);
+                WriteFile(json);
+                MessageBox.Show("Datos de usuarios exportados con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("Favor agregar al menos un usuario para poder exportar.");
+            }
+        }
+
+        /// <summary>
+        /// Escribe el Documento .Jason
+        /// </summary>
+        /// <param name="content">El valor a esciribir y guardar</param>
+        private static void WriteFile(string content)
+        {
+            string path = @"C:/Programacion/Dates/Usuarios.json";
+
+            using (StreamWriter sw = File.CreateText(path))
+            {
+                sw.Write(content);
+            }
+        }
         #endregion
     }
 }
-
+    

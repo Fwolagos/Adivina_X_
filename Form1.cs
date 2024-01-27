@@ -65,5 +65,12 @@ namespace Adivina_X_
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Adivina 'x' es un juego de adivinar el numero pensando por nuestro genio de la lamapra." +
+                " Puedes intentar las veces que quieras pero por cada ves que falles puedes perder un punto o por cada ves que " +
+                "ganes obtendras un punto. ");
+        }
     }
 }
