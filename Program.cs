@@ -27,7 +27,12 @@ namespace Adivina_X_
         /// <summary>
         /// Lista de intentos del usuario en la ram o temporal
         /// </summary>
-        public static List<int> tempList = new List<int>();
+        public static List<int> tempListNumSecret = new List<int>();
+
+        /// <summary>
+        /// Lista de numeros que el jugador probo
+        /// </summary>
+        public static List<int> tempListNumUsert = new List<int>();
 
         /// <summary>
         /// Lista con los  usuarios en la ram
@@ -43,6 +48,11 @@ namespace Adivina_X_
         /// Es la instancia para almacenar el jugador que fue seleccionado
         /// </summary>
         public static UserClass player = null;
+
+        /// <summary>
+        /// Variable para almacenar el numero secreto
+        /// </summary>
+        public static int temNumSecret = 0;
         #endregion
 
         /// <summary>
@@ -61,16 +71,16 @@ namespace Adivina_X_
         /// Funcion encargada de generar un numero secreto sin que se repita 
         /// Esta solo se reinicia si el programa es reiniciado
         /// </summary>
-        /// <returns>Retorna el numero Secreto</returns>
-        public static int SecretNumber()
+        public static void SecretNumber()
         {
             Random rnd = new Random();
             int numRandom = 0;
             do
             {
                 numRandom = rnd.Next();
-            } while (tempList.Contains(numRandom));
-            return numRandom;
+            } while (tempListNumSecret.Contains(numRandom));
+            tempListNumSecret.Add(numRandom);
+            
         }
 
         /// <summary>

@@ -60,8 +60,8 @@ namespace Adivina_X_
                 //oculta el formulario actual 
                 this.Hide();
                 //Muestra el nuevo formulario
-                Usuarios form3 = new Usuarios();
-                form3.Show();
+                Usuarios usuariosForm = new Usuarios();
+                usuariosForm.Show();
             }
             
         }
@@ -103,6 +103,26 @@ namespace Adivina_X_
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        /// <summary>
+        /// Botón que inicia el juego 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Program.player == null)
+            {
+                MessageBox.Show("Primero debe selecionar un usuario!!!!. Presione el boton de Usuarios");
+            }
+            else
+            {
+                this.Hide();
+
+                Game gameForm = new Game();
+                gameForm.Show();
+            }
         }
     }
 }
