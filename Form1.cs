@@ -34,9 +34,7 @@ namespace Adivina_X_
                 MessageBox.Show("Aun el juego no inicia. Por favor precione el boto iniciar.");
             }
             else
-            {
-                //Ocultar form
-                this.Hide();
+            {                
                 //Abrir el otro form
                 ListaIntentos form2 = new ListaIntentos();
                 form2.Show();
@@ -148,7 +146,7 @@ namespace Adivina_X_
                 MessageBox.Show("El juego aun no inicia, por favor presione el boton iniciar juego");
             else
             {
-                Program.tempListNumUsert.Add(Convert.ToInt32(txbNum.Text));
+                Program.tempListNumUsers.Add(Convert.ToInt32(txbNum.Text));
                 Program.GuestNumber(Convert.ToInt32(txbNum.Text));
             }
             if (Program.stateGame == "initiated")
@@ -170,6 +168,7 @@ namespace Adivina_X_
             if (Program.stateGame == "initiated")
             {
                 Program.Surrender();
+                textBox3.Text = Program.player.Score.ToString();
             }
 
         }
@@ -209,6 +208,16 @@ namespace Adivina_X_
             else
             {
                 MessageBox.Show("El juego aun no inicia presione iniciar juego.");
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if ( Program.stateGame == "initiated")
+            {
+                Program.ExportUsers(Program.usersList);
+                MessageBox.Show("Su partida fue guardada");
+                Application.Exit();
             }
         }
     }

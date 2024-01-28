@@ -24,8 +24,8 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void ListaIntentos_Load(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            //Form1 form1 = new Form1();
+           // form1.Show();
         }
 
         /// <summary>
@@ -35,8 +35,9 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            this.Close();
+            //Form1 form1 = new Form1();
+            //form1.Show();
         }
 
         /// <summary>
@@ -46,7 +47,8 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(Program.tempListNumUsert.Cast<object>().ToArray());
+            listBox1.DataSource = Program.tempListNumUsers;
+            //listBox1.Items.Add(Program.tempListNumUsert.Cast<object>().ToArray());
         }
     }
     

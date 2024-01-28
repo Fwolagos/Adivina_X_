@@ -58,6 +58,8 @@ namespace Adivina_X_
                 Program.player = (UserClass)cbx1.SelectedItem;
                 MessageBox.Show("Jugador Seleccionado");
                 this.Close();
+                Form1 form1 = new Form1();
+                form1.Show();
             }
         }
 
@@ -68,7 +70,7 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txbName.Text != null)
+            if (txbName.Text != "")
             {
                 Program.MakeUsers(txbName.Text.ToString());
                 cbx1.DataSource = Program.usersList;

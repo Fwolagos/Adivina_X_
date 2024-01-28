@@ -32,7 +32,7 @@ namespace Adivina_X_
         /// <summary>
         /// Lista de numeros que el jugador probo
         /// </summary>
-        public static List<int> tempListNumUsert = new List<int>();
+        public static List<int> tempListNumUsers = new List<int>();
 
         /// <summary>
         /// Lista con los  usuarios en la ram
@@ -189,7 +189,7 @@ namespace Adivina_X_
                     " Si quieres más deceos, solo cierra la ventana y intenta adivinar el número otra vez");
                 Program.SecretNumber();
                 Program.player.Score += 5;
-                Program.tempListNumUsert.Clear();
+                Program.tempListNumUsers.Clear();
             }
             else
             {
@@ -217,7 +217,7 @@ namespace Adivina_X_
                 " te voy a cumplir tus deceos. en tal caso de igual manera te dire el número que elegí: " +
                 tempListNumSecret[tempListNumSecret.Count - 1]+ " Y te sanciono con -6 puntos por rendirte." +
                 " Si quieres intenta adivinar otra ves mi numero tal vez esta ves ganes!!!!!");
-            Program.tempListNumUsert.Clear();
+            Program.tempListNumUsers.Clear();
             player.Score -= 6;
         }
         #endregion
