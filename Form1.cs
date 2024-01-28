@@ -148,5 +148,25 @@ namespace Adivina_X_
         {
             Program.Surrender();
         }
+
+        /// <summary>
+        /// Para mostrar el nombre del usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.Text = Program.player.Name.ToString();
+        }
+
+        /// <summary>
+        /// Para mostra el recort
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = Program.player.Score.ToString();
+        }
     }
 }
