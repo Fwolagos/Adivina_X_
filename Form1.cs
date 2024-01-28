@@ -125,7 +125,8 @@ namespace Adivina_X_
         private void Form1_Load(object sender, EventArgs e)
         {
             Program.DefaultUser();
-            Program.ExportUsers(Program.usersList);
+            //Pruebas
+            //Program.ExportUsers(Program.usersList);
         }
 
         /// <summary>
@@ -135,8 +136,14 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
-            Program.tempListNumUsert.Add(Convert.ToInt32(txbNum.Text));
-            Program.GuestNumber(Convert.ToInt32(txbNum.Text));
+            if (Program.stateGame == "stoppped")
+                MessageBox.Show("El juego aun no inicia, por favor presione el boton iniciar juego");
+            else
+            {
+                Program.tempListNumUsert.Add(Convert.ToInt32(txbNum.Text));
+                Program.GuestNumber(Convert.ToInt32(txbNum.Text));
+            }
+
         }
 
         /// <summary>
@@ -146,7 +153,10 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
-            Program.Surrender();
+            if (Program.stateGame == "iniated")
+            {
+                Program.Surrender();
+            }
         }
 
         /// <summary>
@@ -167,6 +177,24 @@ namespace Adivina_X_
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             textBox3.Text = Program.player.Score.ToString();
+        }
+
+        /// <summary>
+        /// Boton para refrescar los cambios del puntaje y usuarios 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if ( Program.stateGame == "initiated")
+            {
+                textBox2.Text = Program.player.Name.ToString();
+                textBox3.Text = Program.player.Score.ToString();
+            }
+            else
+            {
+                MessageBox.Show("El juego aun no inicia presione iniciar juego.");
+            }
         }
     }
 }

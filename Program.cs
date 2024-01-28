@@ -40,7 +40,7 @@ namespace Adivina_X_
         public static List<UserClass> usersList = new List<UserClass>();
 
         /// <summary>
-        /// Estado del juego (stopped,start,)
+        /// Estado del juego (stopped,initiated,end)
         /// </summary>
         public static string stateGame = "stoppped";
 

@@ -39,7 +39,9 @@ namespace Adivina_X_
 
             //DataSource propiedad de la lista
             cbx1.DataSource = Program.usersList;
+            cbx1.DisplayMember = "Name";
             cbx2.DataSource = Program.usersList;
+            cbx2.DisplayMember = "Name";
 
         }
 
@@ -54,6 +56,7 @@ namespace Adivina_X_
             {
                 // Obtener el objeto seleccionado
                 Program.player = (UserClass)cbx1.SelectedItem;
+                MessageBox.Show("Jugador Seleccionado");
             }
         }
 
