@@ -31,7 +31,7 @@ namespace Adivina_X_
         {
             if (Program.stateGame == "stoppped")
             {
-                MessageBox.Show("Aun el juego no inicia. Por favor precione el boto iniciar.");
+                MessageBox.Show("Aún el juego no inicia. Por favor presione el botón iniciar.");
             }
             else
             {                
@@ -49,8 +49,7 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            //oculta el formulario actual 
-            this.Hide();
+            
             //Muestra el nuevo formulario
             Usuarios usuariosForm = new Usuarios();
             usuariosForm.Show();
@@ -63,7 +62,7 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Adivina 'x' es un juego de adivinar el numero pensando por nuestro genio de la lamapra." +
+            MessageBox.Show("Adivina 'x' es un juego de adivinar el número pensado por nuestro genio de la lampara." +
                 " Puedes intentar las veces que quieras pero por cada ves que falles puedes perder un punto o por cada ves que " +
                 "ganes obtendras un punto. ");
         }
@@ -77,7 +76,7 @@ namespace Adivina_X_
         {
             if (Program.stateGame == "stoppped")
             {
-                MessageBox.Show("El juego aun no inicia por favor presione el boto iniciar");
+                MessageBox.Show("Aún el juego no inicia. Por favor presione el botón iniciar");
             }
             else
             {
@@ -105,7 +104,7 @@ namespace Adivina_X_
         {
             if (Program.player == null)
             {
-                MessageBox.Show("Primero debe selecionar un usuario!!!!. Presione el boton de Usuarios");
+                MessageBox.Show("Primero debe selecionar un usuario!!!!. Presione el botón de Usuarios");
                 Usuarios usuariosForm = new Usuarios();
                 usuariosForm.Show();
             }
@@ -131,8 +130,7 @@ namespace Adivina_X_
         private void Form1_Load(object sender, EventArgs e)
         {
             Program.DefaultUser();
-            //Pruebas
-            //Program.ExportUsers(Program.usersList);
+            
         }
 
         /// <summary>
@@ -143,11 +141,19 @@ namespace Adivina_X_
         private void button5_Click(object sender, EventArgs e)
         {
             if (Program.stateGame == "stoppped")
-                MessageBox.Show("El juego aun no inicia, por favor presione el boton iniciar juego");
+                MessageBox.Show("El juego aun no inicia, por favor presione el botón iniciar juego");
             else
             {
-                Program.tempListNumUsers.Add(Convert.ToInt32(txbNum.Text));
-                Program.GuestNumber(Convert.ToInt32(txbNum.Text));
+                try
+                {
+                    Program.tempListNumUsers.Add(Convert.ToInt32(txbNum.Text));
+                    Program.GuestNumber(Convert.ToInt32(txbNum.Text));
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("No se permiten letras " + ex.Message);
+                }
+                
             }
             if (Program.stateGame == "initiated")
             {
@@ -211,6 +217,11 @@ namespace Adivina_X_
             }
         }
 
+        /// <summary>
+        /// Boton para gurdar y salir
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button10_Click(object sender, EventArgs e)
         {
             if ( Program.stateGame == "initiated")
@@ -219,6 +230,16 @@ namespace Adivina_X_
                 MessageBox.Show("Su partida fue guardada");
                 Application.Exit();
             }
+            else
+            {
+                MessageBox.Show("Gracias por juegar nuestro juego");
+                Application.Exit();
+            }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

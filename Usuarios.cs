@@ -58,8 +58,7 @@ namespace Adivina_X_
                 Program.player = (UserClass)cbx1.SelectedItem;
                 MessageBox.Show("Jugador Seleccionado");
                 this.Close();
-                Form1 form1 = new Form1();
-                form1.Show();
+                
             }
         }
 
