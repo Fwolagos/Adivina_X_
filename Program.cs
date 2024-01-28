@@ -77,7 +77,7 @@ namespace Adivina_X_
             int numRandom = 0;
             do
             {
-                numRandom = rnd.Next();
+                numRandom = rnd.Next(1,101);
             } while (tempListNumSecret.Contains(numRandom));
             tempListNumSecret.Add(numRandom);
             

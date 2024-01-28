@@ -264,7 +264,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(100, 23);
             this.button9.TabIndex = 10;
-            this.button9.Text = "Refrescar Puntaje";
+            this.button9.Text = "Refrescar Pagina";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 

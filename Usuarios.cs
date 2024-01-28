@@ -57,6 +57,7 @@ namespace Adivina_X_
                 // Obtener el objeto seleccionado
                 Program.player = (UserClass)cbx1.SelectedItem;
                 MessageBox.Show("Jugador Seleccionado");
+                this.Close();
             }
         }
 

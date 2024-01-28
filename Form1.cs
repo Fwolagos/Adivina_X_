@@ -108,6 +108,10 @@ namespace Adivina_X_
             {
                 MessageBox.Show("Primero debe selecionar un usuario!!!!. Presione el boton de Usuarios");
             }
+            else if (Program.stateGame == "initiated")
+            {
+                MessageBox.Show("El juego ya inicio");
+            }
             else
             {
                 this.Hide();
@@ -153,10 +157,11 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
-            if (Program.stateGame == "iniated")
+            if (Program.stateGame == "initiated")
             {
                 Program.Surrender();
             }
+
         }
 
         /// <summary>
