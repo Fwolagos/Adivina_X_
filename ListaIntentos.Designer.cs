@@ -36,17 +36,20 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Segoe Marker", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(29, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 277);
+            this.listBox1.Size = new System.Drawing.Size(120, 274);
             this.listBox1.TabIndex = 0;
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Segoe Marker", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(162, 259);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 1;
             this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,9 +57,10 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Segoe Marker", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(162, 12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 28);
             this.button2.TabIndex = 2;
             this.button2.Text = "Cargar Lista";
             this.button2.UseVisualStyleBackColor = true;
