@@ -84,6 +84,7 @@ namespace Adivina_X_
             else
             {
                 Program.player.RessetScore();
+                textBox3.Text = Program.player.Score.ToString();
             }
         }
 
@@ -107,6 +108,8 @@ namespace Adivina_X_
             if (Program.player == null)
             {
                 MessageBox.Show("Primero debe selecionar un usuario!!!!. Presione el boton de Usuarios");
+                Usuarios usuariosForm = new Usuarios();
+                usuariosForm.Show();
             }
             else if (Program.stateGame == "initiated")
             {
@@ -114,6 +117,7 @@ namespace Adivina_X_
             }
             else
             {
+                textBox2.Text = Program.player.Name.ToString();
                 this.Hide();
 
                 Game gameForm = new Game();
@@ -146,6 +150,12 @@ namespace Adivina_X_
             {
                 Program.tempListNumUsert.Add(Convert.ToInt32(txbNum.Text));
                 Program.GuestNumber(Convert.ToInt32(txbNum.Text));
+            }
+            if (Program.stateGame == "initiated")
+            {
+                textBox2.Text = Program.player.Name.ToString();
+                textBox3.Text = Program.player.Score.ToString();
+                txbNum.Clear();
             }
 
         }
@@ -191,7 +201,7 @@ namespace Adivina_X_
         /// <param name="e"></param>
         private void button9_Click(object sender, EventArgs e)
         {
-            if ( Program.stateGame == "initiated")
+            if (Program.stateGame == "initiated")
             {
                 textBox2.Text = Program.player.Name.ToString();
                 textBox3.Text = Program.player.Score.ToString();
