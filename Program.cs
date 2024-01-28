@@ -197,18 +197,28 @@ namespace Adivina_X_
                 {
                     MessageBox.Show("-Genio- No, no, no. No es el correcto" +
                         " tu número es muy alto");
-                    player.Score -= 3;
+                    player.Score -= 2;
                 }
                 else
                 {
                     MessageBox.Show("-Genio- No, no, no. No es el correcto" +
                         " tu número es muy Bajo");
-                    player.Score -= 2;
+                    player.Score -= 1;
                 }
             }
         }
 
-        
+        /// <summary>
+        /// Esta funcion Indica que el jugar se rindio y procede a bajar los puntos del jugador
+        /// </summary>
+        public static void Surrender()
+        {
+            MessageBox.Show("-Genio- !OH! Pobre iluso, tal vez esto no sea lo tuyo, me temo que no" +
+                " te voy a cumplir tus deceos. en tal caso de igual manera te dire el número que elegí: " +
+                tempListNumSecret[tempListNumSecret.Count - 1]+ " Y te sanciono con -6 puntos por rendirte.");
+            Program.tempListNumUsert.Clear();
+            player.Score -= 6;
+        }
         #endregion
     }
 }
