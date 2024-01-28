@@ -139,9 +139,14 @@ namespace Adivina_X_
             Program.GuestNumber(Convert.ToInt32(txbNum.Text));
         }
 
+        /// <summary>
+        /// Boton que permite a jugador rendirse
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
-
+            Program.Surrender();
         }
     }
 }

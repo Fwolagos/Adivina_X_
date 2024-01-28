@@ -215,7 +215,8 @@ namespace Adivina_X_
         {
             MessageBox.Show("-Genio- !OH! Pobre iluso, tal vez esto no sea lo tuyo, me temo que no" +
                 " te voy a cumplir tus deceos. en tal caso de igual manera te dire el número que elegí: " +
-                tempListNumSecret[tempListNumSecret.Count - 1]+ " Y te sanciono con -6 puntos por rendirte.");
+                tempListNumSecret[tempListNumSecret.Count - 1]+ " Y te sanciono con -6 puntos por rendirte." +
+                " Si quieres intenta adivinar otra ves mi numero tal vez esta ves ganes!!!!!");
             Program.tempListNumUsert.Clear();
             player.Score -= 6;
         }
