@@ -127,5 +127,21 @@ namespace Adivina_X_
             Program.DefaultUser();
             Program.ExportUsers(Program.usersList);
         }
+
+        /// <summary>
+        /// Boton para averiguar si el numero es correcto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Program.tempListNumUsert.Add(Convert.ToInt32(txbNum.Text));
+            Program.GuestNumber(Convert.ToInt32(txbNum.Text));
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -175,6 +175,40 @@ namespace Adivina_X_
             usersList.RemoveAll(user => user.Name == name);
             ExportUsers(usersList);
         }
+
+        /// <summary>
+        /// Es para averiguar cual es el numero correcto,dar retroalimentacion y dar o restar puntos
+        /// 
+        /// </summary>
+        /// <param name="num"></param>
+        public static void GuestNumber(int num)
+        {
+            if (num == tempListNumSecret[tempListNumSecret.Count - 1])
+            {
+                MessageBox.Show("!OH! Lo adivinaste, yo el gran Genio te concedere 3 deceos, solo piensalos en tu mente y seran reales." +
+                    " Si quieres más deceos, solo cierra la ventana y intenta adivinar el número otra vez");
+                Program.SecretNumber();
+                Program.player.Score += 5;
+                Program.tempListNumUsert.Clear();
+            }
+            else
+            {
+                if (num > tempListNumSecret[tempListNumSecret.Count - 1])
+                {
+                    MessageBox.Show("-Genio- No, no, no. No es el correcto" +
+                        " tu número es muy alto");
+                    player.Score -= 3;
+                }
+                else
+                {
+                    MessageBox.Show("-Genio- No, no, no. No es el correcto" +
+                        " tu número es muy Bajo");
+                    player.Score -= 2;
+                }
+            }
+        }
+
+        
         #endregion
     }
 }
