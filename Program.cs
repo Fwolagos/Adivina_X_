@@ -136,7 +136,7 @@ namespace Adivina_X_
         /// Escribe el Documento .Jason
         /// </summary>
         /// <param name="content">El valor a esciribir y guardar</param>
-        private static void WriteFile(string content)
+        public static void WriteFile(string content)
         {
             string path = @"C:/Programacion/Dates/Usuarios.json";
 
@@ -144,6 +144,36 @@ namespace Adivina_X_
             {
                 sw.Write(content);
             }
+        }
+
+        /// <summary>
+        /// Agrega un usuario por default al juego
+        /// </summary>
+        public static void DefaultUser()
+        {
+            UserClass user = new UserClass("Default",0);
+            usersList.Add(user);
+        }
+
+        /// <summary>
+        /// Crea usuario 
+        /// </summary>
+        /// <param name="name">Ocupa el parametro de nombre para crear un usuario</param>
+        public static void MakeUsers(string name)
+        {
+            UserClass user = new UserClass(name, 0);
+            usersList.Add(user);
+            ExportUsers(usersList);
+        }
+
+        /// <summary>
+        /// Borra usuarios dandole un nombre
+        /// </summary>
+        /// <param name="name">Nombre del usuario</param>
+        public static void DeleteUsers(string name)
+        {
+            usersList.RemoveAll(user => user.Name == name);
+            ExportUsers(usersList);
         }
         #endregion
     }
