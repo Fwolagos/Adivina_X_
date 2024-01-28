@@ -27,7 +27,7 @@ El proyecto final consistia en crear  repositorio Git Hub, Documentar todo el tr
 ## Installation
 
 Install my-project 
-Crear Directorio 'Programación' en la raíz del sistema y clonar el siguiente repositorio. 
+Crear Directorio 'Programacion' en la raíz del sistema y clonar el siguiente repositorio. 
 
 ```bash
   git clone https://github.com/Fwolagos/Adivina_X_.git
