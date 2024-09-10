@@ -4,13 +4,13 @@
 Adivina X es un juego Creado completamente en 
  C#. Este Consiste en un mini juego en el que debes adivinar el numero pensando por el Genio y ganar la mayor cantidad de puntos posibles.
 
- 1. El juego trae su sistema de usuarios, donde se pueden imortar guardar y crear  usuarios.
+ 1. El juego trae su sistema de usuarios, donde se pueden importar guardar y crear  usuarios.
  2. Tiene un sistema de retroalimentacion  para poder llegar mas facilmente al número que es.
  3. Tiene su sistema pra rendirse.
  4. Su historial de los numeros ingresados por el usuario.
  5. Un sistema para reiniciar el puntaje 
  
- Entre otras cosas trata de un juego pequeño, sencillo y facil de entender para que hasta niños puedan juegarlo. Con us GUI minimalista, puede resultar comico e entrenido para cualquier persona.
+ Entre otras cosas trata de un juego pequeño, sencillo y facil de entender para que hasta niños puedan juegarlo. Con su GUI minimalista, puede resultar comico e entrenido para cualquier persona.
  
 
 
